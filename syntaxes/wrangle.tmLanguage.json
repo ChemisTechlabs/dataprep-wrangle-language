@@ -1,0 +1,82 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Wrangle",
+
+  "patterns": [
+    {
+      "include": "#transform"
+    },
+    {
+      "include": "#comment"
+    }
+  ],
+  "repository": {
+    "transform": {
+      "name": "keyword",
+      "begin": "^([\\w]+)",
+      "end": "$",
+      "patterns": [{ "include": "#param-type" }, { "include": "#param" }]
+    },
+    "param": {
+      "name": "variable.parameter",
+      "begin": "([\\w]+):",
+      "end": "(?=([\\w]+):|$)",
+      "patterns": [
+        { "include": "#formula" },
+        { "include": "#number" },
+        { "include": "#string" },
+        { "include": "#string-unquoted" },
+        { "include": "#regex" }
+      ]
+    },
+    "param-type": {
+      "name": "variable.parameter",
+      "begin": "([type]+):",
+      "end": "(?=([\\w]+):|$)",
+      "contentName": "support.type",
+      "patterns": [
+        {
+          "name": "entity.name.type",
+          "match": "(String|Integer|Float|Bool|SSN|Phone|Emailaddress|Creditcard|Gender|Map|Array|Ipaddress|Url|Httpcodes|Zipcode|State|Datetime)"
+        }
+      ]
+    },
+    "formula": {
+      "name": "entity.name.function",
+      "begin": "([\\w]+)\\(",
+      "end": "\\)",
+      "patterns": [
+        { "include": "#formula" },
+        { "include": "#number" },
+        { "include": "#string" },
+        { "include": "#string-unquoted" }
+      ]
+    },
+    "string": {
+      "name": "string.quoted",
+      "begin": "(\"|')",
+      "end": "(\"|')",
+      "patterns": [{ "name": "constant.character.escape", "match": "\\." }]
+    },
+    "string-unquoted": {
+      "name": "string.unquoted",
+      "match": "\\w"
+    },
+    "number": {
+      "name": "constant.numeric",
+      "match": "\\b\\d+\\b"
+    },
+    "regex": {
+      "name": "string.regexp",
+      "begin": "\\/",
+      "end": "\\/",
+      "patterns": [{ "name": "constant.character.escape", "match": "\\." }]
+    },
+    "comment": {
+      "name": "comment.line",
+      "begin": "/{2}",
+      "end": "$"
+    }
+  },
+  "scopeName": "source.wrangle"
+}

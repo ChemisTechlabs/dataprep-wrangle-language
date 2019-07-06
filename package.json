@@ -1,0 +1,34 @@
+{
+  "name": "dataprep-wrangler-language",
+  "displayName": "Cloud Dataprep by Trifacta Language",
+  "description": "Language support for Cloud Dataprep by Trifacta wrangler files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.36.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "wrangle",
+        "aliases": [
+          "Wrangle",
+          "wrangle"
+        ],
+        "extensions": [
+          ".wrangle"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "wrangle",
+        "scopeName": "source.wrangle",
+        "path": "./syntaxes/wrangle.tmLanguage.json"
+      }
+    ]
+  }
+}
