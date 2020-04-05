@@ -92,12 +92,6 @@
       "name": "constant.numeric",
       "match": "\\b\\d+\\b"
     },
-    "regex": {
-      "name": "string.regexp",
-      "begin": "\\/",
-      "end": "\\/",
-      "patterns": [{ "name": "constant.character.escape", "match": "\\." }]
-    },
     "comment": {
       "name": "comment.line",
       "begin": "/{2}",
