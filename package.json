@@ -3,6 +3,11 @@
   "displayName": "Cloud Dataprep Wrangle",
   "description": "Language support for Cloud Dataprep Wrangle by Trifacta®",
   "version": "0.0.1",
+  "publisher": "chemistechlabs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chemistechlabs/dataprep-wrangle-language"
+  },
   "engines": {
     "vscode": "^1.43.2"
   },
