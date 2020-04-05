@@ -1,7 +1,7 @@
 {
   "name": "dataprep-wrangle-language",
   "displayName": "Cloud Dataprep Wrangle",
-  "description": "Language support for Cloud Dataprep Wrangle by Trifacta",
+  "description": "Language support for Cloud Dataprep Wrangle by Trifacta®",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.43.2"
