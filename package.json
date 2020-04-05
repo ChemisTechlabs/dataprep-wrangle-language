@@ -29,6 +29,12 @@
         "scopeName": "source.wrangle",
         "path": "./syntaxes/wrangle.tmLanguage.json"
       }
+    ],
+    "snippets": [
+      {
+        "language": "wrangle",
+        "path": "./snippets/wrangle.code-snippets.json"
+      }
     ]
   }
 }

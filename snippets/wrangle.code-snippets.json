@@ -1,0 +1,56 @@
+{
+	"Case Transform If": {
+		"scope": "wrangle",
+		"prefix": "caseif",
+		"body": "case if: a == true then: 'yes' else: 'no' as: 'new_column'",
+		"description": "Performs conditional transformation of data with a single statement using if-then-else logic or with multiple statements using case logic. Results are generated in a new column."
+	},
+	"Case Transform": {
+		"scope": "wrangle",
+		"prefix": "case",
+		"body": "case col: column_name colCases: ['Val A', 1],['Val B', 2] default: 0 as: 'new_column'",
+		"description": "Performs conditional transformation of data with a single statement using if-then-else logic or with multiple statements using case logic. Results are generated in a new column."
+	},
+	"Countpattern Transform": {
+		"scope": "wrangle",
+		"prefix": "count",
+		"body": "countpattern col: column_name on: 'value'",
+		"description": "Counts the number of instances of a specified pattern in a column and writes that value into a newly generated column. Source column is unchanged."
+	},
+	"Deduplicate Transform": {
+		"scope": "wrangle",
+		"prefix": "deduplicate",
+		"body": "deduplicate",
+		"description": "Removes exact duplicate rows from your dataset. Duplicate rows are identified by exact, case-sensitive matches between values."
+	},
+	"Delete Transform": {
+		"scope": "wrangle",
+		"prefix": "delete",
+		"body": "delete row:(column == true)",
+		"description": "Deletes a set of rows in your dataset, based on a condition specified in the row expression. If the conditional expression is true, then the row is deleted."
+	},
+	"Derive Transform": {
+		"scope": "wrangle",
+		"prefix": "derive",
+		"body": "derive type: single value:SQRT(POW(a,2) + POW(b,2)) as:'c'",
+		"description": "Generate a new column where the values are the output of the value expression. Expression can be calculated based on values specified in the group parameter. Output column can be named as needed."
+	},
+	"Drop Transform": {
+		"scope": "wrangle",
+		"prefix": "drop",
+		"body": "drop col: column1, column2 action: Drop",
+		"description": "Removes the specified column or columns permanently from your dataset."
+	},
+	"Extract Transform": {
+		"scope": "wrangle",
+		"prefix": "extract",
+		"body": "extract col: column_name on: 'value' limit: 10",
+		"description": "Extracts a subset of data from one column and inserts it into a new column, based on a specified string or pattern. The source column in unmodified."
+	},
+	"Settype Transform": {
+		"scope": "wrangle",
+		"prefix": "settype",
+		"body": "settype col: column_name type: 'String'",
+		"description": "Sets the data type of the specified column or columns."
+	}
+}
