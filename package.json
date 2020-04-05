@@ -9,7 +9,7 @@
     "url": "https://github.com/chemistechlabs/dataprep-wrangle-language"
   },
   "engines": {
-    "vscode": "^1.43.2"
+    "vscode": "^1.40.0"
   },
   "categories": [
     "Programming Languages"
