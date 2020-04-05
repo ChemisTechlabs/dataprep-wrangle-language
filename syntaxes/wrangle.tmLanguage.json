@@ -1,7 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "Wrangle",
-
   "patterns": [
     {
       "include": "#transform"
@@ -15,18 +14,32 @@
       "name": "keyword",
       "begin": "^([\\w]+)",
       "end": "$",
-      "patterns": [{ "include": "#param-type" }, { "include": "#param" }]
+      "patterns": [
+        {
+          "include": "#param-type"
+        },
+        {
+          "include": "#param"
+        }
+      ]
     },
     "param": {
       "name": "variable.parameter",
       "begin": "([\\w]+):",
       "end": "(?=([\\w]+):|$)",
       "patterns": [
-        { "include": "#formula" },
-        { "include": "#number" },
-        { "include": "#string" },
-        { "include": "#string-unquoted" },
-        { "include": "#regex" }
+        {
+          "include": "#formula"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#string-unquoted"
+        }
       ]
     },
     "param-type": {
@@ -46,17 +59,30 @@
       "begin": "([\\w]+)\\(",
       "end": "\\)",
       "patterns": [
-        { "include": "#formula" },
-        { "include": "#number" },
-        { "include": "#string" },
-        { "include": "#string-unquoted" }
+        {
+          "include": "#formula"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#string-unquoted"
+        }
       ]
     },
     "string": {
       "name": "string.quoted",
       "begin": "(\"|')",
       "end": "(\"|')",
-      "patterns": [{ "name": "constant.character.escape", "match": "\\." }]
+      "patterns": [
+        {
+          "name": "constant.character.escape",
+          "match": "\\."
+        }
+      ]
     },
     "string-unquoted": {
       "name": "string.unquoted",
