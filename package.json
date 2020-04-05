@@ -8,6 +8,11 @@
     "type": "git",
     "url": "https://github.com/chemistechlabs/dataprep-wrangle-language"
   },
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#222222",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.40.0"
   },
