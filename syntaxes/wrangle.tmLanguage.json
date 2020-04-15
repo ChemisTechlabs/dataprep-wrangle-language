@@ -77,6 +77,9 @@
         },
         {
           "include": "#string-unquoted"
+        },
+        {
+          "include": "#string-regexp"
         }
       ]
     },
@@ -107,6 +110,16 @@
     "string-unquoted": {
       "name": "string.unquoted",
       "match": "\\w"
+    },
+    "string-regexp":{
+      "name": "constant.regexp",
+      "begin": "\\\/",
+      "end": "\\\/",
+      "patterns": [
+        {
+          "include": "#string-escaped-character"
+        }
+      ]
     },
     "number": {
       "name": "constant.numeric",
