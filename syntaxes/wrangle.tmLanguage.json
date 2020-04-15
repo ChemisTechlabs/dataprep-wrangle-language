@@ -80,7 +80,7 @@
       "patterns": [
         {
           "name": "constant.character.escape",
-          "match": "\\."
+          "match": "\\\\."
         }
       ]
     },
