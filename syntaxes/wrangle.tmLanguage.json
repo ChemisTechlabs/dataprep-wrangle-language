@@ -36,9 +36,6 @@
         },
         {
           "include": "#string"
-        },
-        {
-          "include": "#string-unquoted"
         }
       ]
     },
@@ -67,22 +64,45 @@
         },
         {
           "include": "#string"
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "include": "#string-single-quoted"
+        },
+        {
+          "include": "#string-double-quoted"
         },
         {
           "include": "#string-unquoted"
         }
       ]
     },
-    "string": {
-      "name": "string.quoted",
-      "begin": "(\"|')",
-      "end": "(\"|')",
+    "string-single-quoted": {
+      "name": "string.quoted.single",
+      "begin": "'",
+      "end": "'",
       "patterns": [
         {
-          "name": "constant.character.escape",
-          "match": "\\\\."
+          "include": "#string-escaped-character"
         }
       ]
+    },
+    "string-double-quoted": {
+      "name": "string.quoted.double",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "include": "#string-escaped-character"
+        }
+      ]
+    },
+    "string-escaped-character": {
+      "name": "constant.character.escape",
+      "match": "\\\\."
     },
     "string-unquoted": {
       "name": "string.unquoted",
